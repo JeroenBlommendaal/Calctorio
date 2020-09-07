@@ -9,7 +9,8 @@ const intialState = {
   science: {
     spm: 0,
     sps: 0
-  }
+  },
+  assemblyMachine: 'one',
 }
 
 class App extends Component {
@@ -41,6 +42,11 @@ class App extends Component {
     console.log(event.target.value)
   }
 
+  onAssemblyMachineChange = (event) => {
+    this.setState({ assemblyMachine: event.target.id })
+    console.log(event.target.id)
+  }
+
   render() {
 
     return (
@@ -52,6 +58,8 @@ class App extends Component {
         <SelectGrid
           onSpmChange={this.onSpmChange}
           onSpsChange={this.onSpsChange}
+          onAssemblyMachineChange={this.onAssemblyMachineChange}
+          assemblyMachine={this.assemblyMachine}
         />
       </div>
     );

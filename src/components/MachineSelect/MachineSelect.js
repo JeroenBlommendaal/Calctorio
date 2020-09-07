@@ -3,15 +3,10 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 // import TextField from '@material-ui/core/TextField';
 import Machines from './Machines.js'
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
-import Favorite from '@material-ui/icons/Favorite';
-import FavoriteBorder from '@material-ui/icons/FavoriteBorder';
 import 'typeface-roboto';
-import MachineSelectIcon from './MachineSelectIcon.js'
 
 import './../../App.css';
-import { Typography, Icon } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -24,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const MachineSelect = ({onSpmChange, onSpsChange}) => {
+const MachineSelect = ({ assemblyMachine }) => {
     const classes = useStyles();
 
     return (
@@ -36,7 +31,7 @@ const MachineSelect = ({onSpmChange, onSpsChange}) => {
                         </Typography>
                     </Grid>
                     <Grid item xs={8}>
-                        <Machines />
+                        <Machines assemblyMachine={assemblyMachine} />
                     </Grid>
                 </Grid>
         </div>
